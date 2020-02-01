@@ -152,21 +152,25 @@ section.feed img {
 
 .fade-leave-active,
 .fade-enter-active {
-  transition: opacity 1s;
+  transition: opacity var(--timing) var(--bezier), transform var(--timing) var(--bezier);
 }
 
 .fade-leave {
   opacity: 1;
+  transform: translate(0, 0);
 }
 
 .fade-leave-to {
   opacity: 0;
+  transform: translate(0, 30px);
 }
 
 .fade-enter {
   opacity: 0;
+  transform: translate(0, 30px);
 }
 
 .fade-enter-to {
   opacity: 1;
+  transform: translate(0, 0);
 }
