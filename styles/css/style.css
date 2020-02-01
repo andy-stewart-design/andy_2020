@@ -158,6 +158,10 @@ section.feed img {
   transition: opacity var(--timing) var(--bezier), transform var(--timing) var(--bezier);
 }
 
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
 .fade-leave {
   opacity: 1;
   transform: translate(0, 0);
