@@ -84,6 +84,9 @@ a.selected {
 
 a.selected {
   color: var(--nav-link-selected);
+
+  pointer-events: none;
+  cursor: default;
 }
 
 nav a {
