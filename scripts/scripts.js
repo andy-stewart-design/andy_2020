@@ -1,4 +1,4 @@
-const bodyTag = querySelector('body');
+const bodyTag = document.querySelector("body");
 
 // tell Barba to use the css module
 barba.use(barbaCss);
@@ -8,7 +8,8 @@ barba.init({
     transitions: [
         {
             name: 'fade',
-            beforeEnter ({ current, next, trigger }) {
+            once () {},
+            beforeLeave ({ current, next, trigger }) {
                 const headerLinks = document.querySelectorAll('header a');
                 const href = next.url.path;
 
@@ -25,6 +26,14 @@ barba.init({
                 })
             }
         }
-    ]
- 
+    ],
+    views: [{
+        namespace: "feed",
+        beforeEnter () {
+            bodyTag.classList.add("feed");
+        },
+        beforeLeave () {
+            bodyTag.classList.remove("feed");
+        }
+    }]
 });
