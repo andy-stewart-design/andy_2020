@@ -1,3 +1,5 @@
+const bodyTag = querySelector('body');
+
 // tell Barba to use the css module
 barba.use(barbaCss);
 
@@ -21,6 +23,17 @@ barba.init({
                 window.scrollTo ({
                     top: 0
                 })
+            }
+        }
+    ],
+    views: [
+        {
+            namespace: 'feed',
+            beforeEnter () {
+                bodyTag.classList.add('feed');
+            },
+            beforeLeave () {
+                bodyTag.classList.remove('feed');
             }
         }
     ]
