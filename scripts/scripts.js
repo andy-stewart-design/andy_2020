@@ -5,7 +5,12 @@ barba.use(barbaCss);
 barba.init({
     transitions: [
         {
-            name: 'fade'
+            name: 'fade',
+            beforeEnter () {
+                window.scrollTo ({
+                    top: 0
+                })
+            }
         }
     ]
 });
