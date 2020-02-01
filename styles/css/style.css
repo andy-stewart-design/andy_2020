@@ -75,12 +75,13 @@ a {
   text-decoration: none;
   color: var(--nav-link);
   border-bottom: 0.1em solid var(--nav-underline);
-  transition: color var(--timing) var(--background);
+  transition: color var(--timing), border-bottom var(--timing);
 }
 
 a:hover,
 a.selected {
   border-bottom-color: var(--nav-underline-hover);
+  color: var(--nav-link-selected);
 }
 
 a.selected {
