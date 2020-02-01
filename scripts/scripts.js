@@ -8,9 +8,14 @@ barba.init({
             name: 'fade',
             beforeEnter ({ current, next, trigger }) {
                 const headerLinks = document.querySelectorAll('header a');
+                const href = next.url.path;
 
                 headerLinks.forEach(link => {
-                    link.classList.remove('selected');
+                    if (link.getAttribute("href") === href) {
+                        link.classList.add('selected');
+                    } else {
+                        link.classList.remove('selected');
+                    }
                 })
 
                 window.scrollTo ({
