@@ -25,16 +25,16 @@ barba.init({
                 })
             }
         }
-    ],
-    views: [
-        {
-            namespace: 'feed',
-            beforeEnter () {
-                bodyTag.classList.add('feed')
-            },
-            beforeLeave () {
-                bodyTag.classList.remove('feed')
-            }
-        }
     ]
+    // views: [
+    //     {
+    //         namespace: 'feed',
+    //         beforeEnter () {
+    //             bodyTag.classList.add('feed')
+    //         },
+    //         beforeLeave () {
+    //             bodyTag.classList.remove('feed')
+    //         }
+    //     }
+    // ]
 });
