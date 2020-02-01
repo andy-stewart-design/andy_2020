@@ -30,10 +30,10 @@ barba.init({
         {
             namespace: 'feed',
             beforeEnter () {
-                bodyTag.classList.add('feed');
+                bodyTag.classList.add('feed')
             },
             beforeLeave () {
-                bodyTag.classList.remove('feed');
+                bodyTag.classList.remove('feed')
             }
         }
     ]
