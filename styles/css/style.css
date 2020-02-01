@@ -147,3 +147,26 @@ section.feed img {
   object-fit: cover;
   grid-column: span 2;
 }
+
+/* Barba Styles */
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
