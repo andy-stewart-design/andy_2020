@@ -75,6 +75,7 @@ a {
   text-decoration: none;
   color: var(--nav-link);
   border-bottom: 0.1em solid var(--nav-underline);
+  transition: color var(--timing) var(--background);
 }
 
 a:hover,
