@@ -11,13 +11,13 @@
 }
 
 :root {
-  --background: #f4acac;
-  --text-color: #000011;
+  --background: #1a1a1a;
+  --text-color: #efefef;
 
-  --nav-link: rgba(0, 0, 17, 0.6);
-  --nav-link-selected: rgba(0, 0, 17, 1);
-  --nav-underline: rgba(0, 0, 17, 0.1);
-  --nav-underline-hover: rgba(0, 0, 17, 1);
+  --nav-link: rgba(255, 255, 255, 0.6);
+  --nav-link-selected: rgba(255, 255, 255, 1);
+  --nav-underline: rgba(255, 255, 255, 0.1);
+  --nav-underline-hover: rgba(255, 255, 255, 1);
 
   --timing: 0.25s;
   --bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
