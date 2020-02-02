@@ -1,3 +1,5 @@
+/* Import Fonts */
+
 @font-face {
   font-family: "Ortica";
   font-weight: 700;
@@ -10,6 +12,8 @@
   src: url(../../fonts/ortica-light.woff2), url(../../fonts/ortica-light.woff);
 }
 
+/* General Styles */
+
 :root {
   --background: #e9e9ea;
   --text-color: #000011;
@@ -21,12 +25,13 @@
 
   --timing: 0.25s;
   --bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 body {
-  font-family: Ortica, Arial;
-  font-size: 16px;
-  line-height: 1.5;
   background-color: var(--background);
   color: var(--text-color);
   padding: 8rem 48px 0 48px;
@@ -35,7 +40,7 @@ body {
 }
 
 body.feed {
-  --background: #000011;
+  --background: #1a1a1a;
   --text-color: #ffffff;
 
   --nav-link: rgba(255, 255, 255, 0.6);
@@ -44,15 +49,31 @@ body.feed {
   --nav-underline-hover: rgba(255, 255, 255, 1);
 }
 
-/* General Styles */
-
 header,
 section {
   font-size: 1rem;
 }
 
+/* Type Styles */
+
 .txt-l1 {
   font-size: 3em;
+}
+
+.txt-bld {
+  font-weight: 700;
+}
+
+/* Link Styles */
+
+a {
+  text-decoration: none;
+  color: var(--nav-link);
+  transition: color var(--timing);
+}
+
+a:hover {
+  color: var(--nav-link-selected);
 }
 
 /* Nav Styles */
@@ -82,32 +103,32 @@ nav a:last-child {
   margin-right: 0;
 }
 
+nav a.selected {
+  color: var(--nav-link-selected);
+}
+
+nav a.selected {
+  color: var(--nav-link-selected);
+
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Content Styles */
+
 main.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  /* background: blue; */
+  width: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: var(--nav-link);
-  border-bottom: 0.1em solid var(--nav-underline);
-  transition: color var(--timing), border-bottom var(--timing);
-}
-
-a:hover,
-a.selected {
-  border-bottom-color: var(--nav-underline-hover);
-  color: var(--nav-link-selected);
-}
-
-a.selected {
-  color: var(--nav-link-selected);
-
-  pointer-events: none;
-  cursor: default;
+.logo-mark {
+  display: block;
+  fill: var(--nav-link-selected);
+  width: 100%;
+  max-width: 16rem;
 }
 
 /* Footer Styles */
