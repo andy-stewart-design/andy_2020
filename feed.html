@@ -11,7 +11,7 @@
   <link href="styles/css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="dark">
   <header>
     <nav>
       <a href="/">Home</a>
@@ -21,17 +21,19 @@
   </header>
 
   <main class="main-content" data-barba="wrapper">
-    <section class="feed" data-barba="container">
-      <h1 class="txt-l1 txt-bld">Page 3</h1>
-    </section>
+    <article class="main-content-cont" data-barba="container" data-barba-namespace="dark">
+      <section class="hero">
+        <h1 class="txt-l1 txt-bld">Page 3</h1>
+      </section>
+      <footer>
+        <p>Andy Stewart is a graphic designer based in Seattle</p>
+      </footer>
+    </article>
   </main>
-
-  <footer>
-    <p>Andy Stewart is a graphic designer based in Seattle</p>
-  </footer>
 
   <script src="scripts/vendor/barba.js"></script>
   <script src="scripts/vendor/barba-css.js"></script>
+  <script src="scripts/vendor/gsap.js"></script>
   <script src="scripts/scripts.js"></script>
 
 </body>
