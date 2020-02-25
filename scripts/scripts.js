@@ -64,6 +64,10 @@ barba.init({
             },
             enter ({ current, next, trigger }) {
                 return new Promise(resolve => {
+                    window.scrollTo({
+                        top: 0
+                    });
+                    
                     const timeline = gsap.timeline({
                         onComplete() {
                             resolve();
