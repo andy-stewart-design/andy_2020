@@ -1,31 +1,16 @@
 const bodyTag = document.querySelector("body");
 
-// tell Barba to use the css module
-// barba.use(barbaCss);
+const wiperLeft = document.createElement("div");
+wiperLeft.classList.add("wiper", "wiper-left");
+bodyTag.appendChild(wiperLeft);
+
+const wiperRight = document.createElement("div");
+wiperRight.classList.add("wiper", "wiper-right");
+bodyTag.appendChild(wiperRight);
 
 // init Barba
 barba.init({
     transitions: [
-        // {
-        //     name: 'fade',
-        //     beforeLeave ({ current, next, trigger }) {
-        //         const headerLinks = document.querySelectorAll('header a');
-        //         const href = next.url.path;
-
-        //         headerLinks.forEach(link => {
-        //             if (link.getAttribute("href") === href) {
-        //                 link.classList.add('selected');
-        //             } else {
-        //                 link.classList.remove('selected');
-        //             }
-        //         })
-        //     },
-        //     beforeEnter ({ current, next, trigger }) {
-        //         window.scrollTo ({
-        //             top: 0
-        //         })
-        //     }
-        // }
         {
             name: "fade",
             beforeLeave ({ next }) {
@@ -50,7 +35,11 @@ barba.init({
                     });
 
                     timeline
-                    .to( current.container, { opacity: 0 } );
+                    .set( wiperLeft, { y: "-110%" } )
+                    .set( wiperRight, { y: "-110%" } )
+                    .to( current.container, { opacity: 0 }, 0 )
+                    .to( wiperLeft, { y: "0%", ease: "power3.inOut", duration: .5 }, .25 )
+                    .to( wiperRight, { y: "0%", ease: "power3.inOut", duration: .5 }, .375 );
                 })
             },
             beforeEnter ({ next }) {
@@ -73,7 +62,9 @@ barba.init({
                     });
     
                     timeline
-                    .to(next.container, { opacity: 1 });
+                    .to(next.container, { opacity: 1 }, .875 )
+                    .to(wiperLeft, { y: "110%", ease: "power3.inOut", duration: .5 }, .5 )
+                    .to(wiperRight, { y: "110%", ease: "power3.inOut", duration: .5 }, .675 );
                 })
             }
         }
