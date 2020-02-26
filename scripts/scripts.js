@@ -28,7 +28,7 @@ barba.init({
         // }
         {
             name: "fade",
-            beforeLeave ({ current, next, trigger }) {
+            beforeLeave ({ next }) {
                 const headerLinks = document.querySelectorAll('header a');
                 const href = next.url.path;
 
@@ -40,7 +40,7 @@ barba.init({
                     }
                 })
             },
-            leave ({ current, next, trigger }) {
+            leave ({ current }) {
                 return new Promise(resolve => {
                     const timeline = gsap.timeline({
                         onComplete () {
@@ -53,21 +53,19 @@ barba.init({
                     .to( current.container, { opacity: 0 } );
                 })
             },
-            beforeEnter ({ current, next, trigger }) {
+            beforeEnter ({ next }) {
                 return new Promise(resolve => {
                     window.scrollTo({
                         top: 0
                     });
-                    
+
+                    next.container.style.opacity = "0";
+
                     resolve();
                 })
             },
-            enter ({ current, next, trigger }) {
+            enter ({ next }) {
                 return new Promise(resolve => {
-                    window.scrollTo({
-                        top: 0
-                    });
-                    
                     const timeline = gsap.timeline({
                         onComplete() {
                             resolve();
@@ -75,7 +73,6 @@ barba.init({
                     });
     
                     timeline
-                    .set(next.container, { opacity: 0 })
                     .to(next.container, { opacity: 1 });
                 })
             }
