@@ -199,7 +199,7 @@ div.wiper {
   width: 51%;
   height: 100%;
   z-index: 2;
-  background-color: black;
+  background-color: #5a82f1;
 
   display: flex;
   flex-direction: column;
